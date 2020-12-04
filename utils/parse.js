@@ -9,6 +9,12 @@ module.exports = (code, info) => {
     const change = ((now - last) / last) * 100
     return [name, code, now, change.toFixed(2)]
   }
+  if(code.startsWith('s_sh') || code.startsWith('s_sz')) {
+    const name = arr[0]
+    const now = arr[1]
+    const change = arr[3]
+    return [name, code, now, change.toFixed(2)]
+  }
   if(code.startsWith('hk')) {
     const name = arr[1]
     const last = arr[3]
